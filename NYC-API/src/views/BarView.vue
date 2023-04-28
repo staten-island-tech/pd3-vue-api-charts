@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bar">
+  <div class="BarView">
     <BarChart v-if="retrievedData" :chartData="dogs" />
     <h1>hi</h1>
   </div>
