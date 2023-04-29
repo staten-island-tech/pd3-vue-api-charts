@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import PieView from "../views/PieView.vue";
 import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
@@ -25,7 +26,7 @@ const router = createRouter({
     {
       path: "/pie",
       name: "PieView",
-      component: () => import("../views/PieView.vue"),
+      component: PieView,
     },
   ],
 });

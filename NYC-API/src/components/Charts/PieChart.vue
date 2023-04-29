@@ -1,29 +1,14 @@
 <template>
   <div>
-    <Pie :data="chartData" :options="chartOptions" v-if="retrievedData" />
+    <Pie :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
 <script>
 import { Pie } from "vue-chartjs";
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-);
+ChartJS.register(Tooltip, Legend, ArcElement);
 
 export default {
   name: "PieChart",
@@ -37,6 +22,11 @@ export default {
       type: Object,
       default: () => {},
     },
+  },
+  data() {
+    return {
+      retrievedData: false,
+    };
   },
 };
 </script>
