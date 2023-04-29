@@ -8,19 +8,22 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [],
+        labels: ["Male", "Female"],
         datasets: [{ data: [] }],
       },
       chartOptions: {
         responsive: true,
+        backgroundColor: ["0000FF", "AA336A"],
       },
       retrievedData: false,
     };
   },
+  mounted() {
+    this.getChartData();
+  },
   methods: {
-    getData: async function () {
+    getChartData: async function () {
       this.retrievedData = false;
-      console.log(this.retrievedData);
       try {
         let data = await fetch(
           "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
@@ -28,39 +31,11 @@ export default {
         let object = await data.json();
         let male = object.filter((dog) => dog.animalgender === "M");
         this.chartData.datasets[0].data.push(male.length);
-        this.chartData.labels.push("Male");
         let female = object.filter((dog) => dog.animalgender === "F");
         this.chartData.datasets[0].data.push(female.length);
-        this.chartData.labels.push("Female");
-        console.log(object);
-        console.log(male);
-        console.log(female);
-        console.log(this.chartData.datasets);
         this.retrievedData = true;
-        console.log(this.retrievedData);
       } catch (error) {
-        console.error(error);
         console.log(error);
-      }
-    },
-
-    async mounted() {
-      retrievedData = false;
-      try {
-        let data = await fetch(
-          "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
-        );
-        let object = await data.json();
-        let male = object.filter((dog) => dog.animalgender === "M");
-        this.chartData.datasets[0].data.push(male.length);
-        let female = object.filter((dog) => dog.animalgender === "F");
-        this.chartData.datasets[0].data.push(female.length);
-        retrievedData = true;
-        console.log(data);
-        console.log(male);
-      } catch (e) {
-        console.error(e);
-        console.log(e);
       }
     },
   },
@@ -69,8 +44,12 @@ export default {
 
 <template>
   <div class="pie">
-    <button class="test" v-on:click="getData">eeeeeeeee</button>
-    <PieChart :chartData="chartData" v-if="retrievedData" />
+    <button class="test" v-on:click="getChartData">eeeeeeeee</button>
+    <PieChart
+      v-if="retrievedData"
+      :chartData="chartData"
+      :chartOptions="chartOptions"
+    />
   </div>
 </template>
 
