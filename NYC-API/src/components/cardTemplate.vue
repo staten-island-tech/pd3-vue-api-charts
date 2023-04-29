@@ -3,6 +3,7 @@ export default {
   name: "cardTemplate",
   props: {
     breed: String,
+    buttonFunction: Function,
   },
   methods: {
     addToChart: async function (breed) {
@@ -28,6 +29,15 @@ export default {
 <template>
   <div class="card">
     <h2 class="breedlabel">{{ breed }}</h2>
-    <button class="button" v-on="addToChart">Add to chart</button>
+    <button
+      class="button"
+      v-on:click="
+        {
+          buttonFunction;
+        }
+      "
+    >
+      Add to chart
+    </button>
   </div>
 </template>
