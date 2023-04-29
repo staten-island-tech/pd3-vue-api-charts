@@ -11,6 +11,6 @@ export default {
 </script>
 <template>
   <main>
-    <TheWelcome></TheWelcome>
+    <BarChart></BarChart>
   </main>
 </template>
