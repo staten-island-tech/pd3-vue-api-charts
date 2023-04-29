@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/pie">pie</RouterLink>
       </nav>
     </header>
+    <RouterView></RouterView>
   </div>
 </template>
 
