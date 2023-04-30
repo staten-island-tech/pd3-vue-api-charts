@@ -45,7 +45,7 @@ mounted() {
           "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
         );
         let object=data.json
-        let birth= object.filter((dog)=>dog.include.animalbirth)
+        let birth= object.animalbirth
            this.getCD.datasets[0].data.push(dog.length);
       }
       
