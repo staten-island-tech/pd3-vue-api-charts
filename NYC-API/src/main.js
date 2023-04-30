@@ -3,13 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 
 import "./assets/main.css";
-<<<<<<< HEAD
 
 
 
 import "./assets/main.css";
-=======
->>>>>>> main
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
