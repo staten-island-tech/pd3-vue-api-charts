@@ -9,11 +9,7 @@
   <script>
   import { Bar } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-<<<<<<< Updated upstream
-import { Mounted } from 'vue'
-=======
-import { Mounted, onMounted } from 'vue'
->>>>>>> Stashed changes
+import { onMounted} from 'vue'
   
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   
@@ -36,7 +32,7 @@ import { Mounted, onMounted } from 'vue'
     }
     
   }
- Mounted() ;{
+ onMounted() ;{
     this.getCD();
   }
   methods: {
