@@ -23,7 +23,7 @@
        
         chartData: {
           labels: [],
-          datasets: [ { data: [] } ]
+          datasets: [{data:[]}]
         },
         chartOptions: {
           responsive: true
@@ -64,8 +64,8 @@ mounted() {
     })
     this.loaded = true;
     console.log(x)
-this.chartData.datasets.birth.push(dates.length)
-         this.chartData.labels.push(x.length)
+this.chartData.datasets.push(dates.length)
+         this.chartData.labels.push(label)
       }
         
       
