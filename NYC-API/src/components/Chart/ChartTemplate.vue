@@ -20,7 +20,7 @@
     data() {
       return {
         chartData: {
-          labels: [{birth:[]}],
+          labels: [],
           datasets: [ { data: [] } ]
         },
         chartOptions: {
@@ -37,17 +37,31 @@ mounted() {
   },
   methods: {
    getCD: async function  () {
-    let year=[];
-    let stats=[];
+      
+ let dates = [];
+  
+      let label = [];
+      
       this.retrievedData = false;
       try {
-        let data = await fetch(
+        let api = await fetch(
           "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
         );
-        let object=data.json
-        let birth= object.animalbirth
-           this.getCD.datasets[0].data.push(dog.length);
+        let object=await api.json()
+       console.log(dates)
+        object.forEach((dog=>{
+          let birth=dog.animalbirth
+          dates.push(birth)
+        }))
+    let x= new Set(dates)
+    x.forEach((birth)=>{
+      label.push(birth)
+    })
+    console.log(x)
+          this.chartData.datasets[0].data.push(dates.length)
+         
       }
+      
       
       catch (error) {
         console.log(error);
