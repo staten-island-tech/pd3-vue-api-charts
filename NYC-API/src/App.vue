@@ -3,16 +3,23 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <div>
+  <div class="app">
     <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/bar">bar</RouterLink>
-        <RouterLink to="/pie">pie</RouterLink>
+        <router-link to="/" class="hello">
+          <div class="image">
+            <img
+              class="image"
+              src="https://3.files.edl.io/aeb1/20/12/02/154937-46cc468f-b7f4-4bb3-945e-3265bdb605d4.jpg"
+            />
+          </div>
+        </router-link>
+        <RouterLink to="/about">About:</RouterLink>
+        <RouterLink to="/bar">Bar Chart:</RouterLink>
+        <RouterLink to="/pie">Pie Chart:</RouterLink>
       </nav>
     </header>
-    <RouterView></RouterView>
+    <RouterView class="routerview"></RouterView>
   </div>
 </template>
 
@@ -22,16 +29,11 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 20px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 nav a.router-link-exact-active {
@@ -50,6 +52,15 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+
+.image {
+  height: 3vw;
 }
 
 @media (min-width: 1024px) {
@@ -71,10 +82,10 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
+    margin-left: 0rem;
     font-size: 1rem;
 
-    padding: 1rem 0;
+    padding: 0rem 0;
     margin-top: 1rem;
   }
 }
