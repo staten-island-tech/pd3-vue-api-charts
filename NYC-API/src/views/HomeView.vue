@@ -11,6 +11,16 @@ export default {
 </script>
 <template>
   <main>
+    <div class="Bar">
     <BarChart></BarChart>
+    </div>
   </main>
 </template>
+
+<style scoped>
+.Bar{
+  width: 100%;
+  background-color:black
+}
+</style>
+

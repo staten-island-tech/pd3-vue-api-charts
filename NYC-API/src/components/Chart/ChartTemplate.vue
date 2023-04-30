@@ -1,7 +1,7 @@
 <template>
     <Bar
       v-if="retrievedData"
-      id="my-chart-id"
+      div class="bar"
       :options="chartOptions"
       :data="chartData"
     />
@@ -69,3 +69,9 @@
   },
 };
 </script>
+
+<style scoped>
+.bar{
+  width: 100%;
+}
+</style>
