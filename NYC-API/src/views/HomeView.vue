@@ -20,8 +20,9 @@ export default {
 <style scoped>
 .Bar{
   width: 100%;
-  background-color:black;
+  background-color:grey;
   font-family: 'Times New Roman', Times, serif;
+  
   
 }
 </style>

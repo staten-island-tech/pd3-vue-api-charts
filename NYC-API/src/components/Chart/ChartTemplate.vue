@@ -22,11 +22,14 @@
     return {
       chartData: {
         labels: [],
-        datasets: [{ data: [] }],
+        datasets: [
+        {label:'Birth Year',
+         data: [] }],
       },
       chartOptions: {
         responsive: true,
         backgroundColor: ["#ff0000","#FFA500", "#FFFF00","#00FF00", "#0000FF","#4B0082", "#8F00FF"],
+       
       },
       retrievedData: false,
     };
