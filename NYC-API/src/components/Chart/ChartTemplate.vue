@@ -1,6 +1,6 @@
 <template>
     <Bar
-
+      v-if="loaded"
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -28,7 +28,7 @@
         chartOptions: {
           responsive: true
         },
-            retrievedData: false,
+            loaded: false,
       }
       
     },
@@ -46,7 +46,7 @@ mounted() {
   
       let label = [];
       
-      this.retrievedData = false;
+      this.loaded = false;
       try {
         let api = await fetch(
           "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
@@ -56,21 +56,23 @@ mounted() {
         object.forEach((dog=>{
           let birth=dog.animalbirth
           dates.push(birth)
+         
         }))
     let x= new Set(dates)
     x.forEach((birth)=>{
       label.push(birth)
     })
+    this.loaded = true;
     console.log(x)
-this.chartData.datasets[0].data.push(dates.length)
-         
+this.chartData.datasets.birth.push(dates.length)
+         this.chartData.labels.push(x.length)
       }
         
       
       catch (error) {
         console.log(error);
       }
-            this.retrievedData = true;
+       
   },
   
 
