@@ -37,12 +37,14 @@ mounted() {
   },
   methods: {
    getCD: async function  () {
+    let year=[];
+    let stats=[];
       this.retrievedData = false;
       try {
         let data = await fetch(
           "https://data.cityofnewyork.us/resource/nu7n-tubp.json"
-        )
-        let object=await data.json
+        );
+        let object=data.json
         let birth= object.filter((dog)=>dog.include.animalbirth)
            this.getCD.datasets[0].data.push(dog.length);
       }
