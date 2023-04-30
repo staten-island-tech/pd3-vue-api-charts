@@ -9,7 +9,11 @@
   <script>
   import { Bar } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { onMounted, onMounted } from 'vue'
+<<<<<<< Updated upstream
+import { Mounted } from 'vue'
+=======
+import { Mounted, onMounted } from 'vue'
+>>>>>>> Stashed changes
   
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   
@@ -25,11 +29,14 @@ import { onMounted, onMounted } from 'vue'
         },
         chartOptions: {
           responsive: true
-        }
+        },
+            retrievedData: false,
       }
+      
     }
+    
   }
- onMounted() ;{
+ Mounted() ;{
     this.getCD();
   }
   methods: {
@@ -47,6 +54,7 @@ import { onMounted, onMounted } from 'vue'
       catch (error) {
         console.log(error);
       }
+            this.retrievedData = true;
   }
     
   }
