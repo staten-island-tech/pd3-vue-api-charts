@@ -1,6 +1,6 @@
 <template>
     <Bar
-     v-if="loaded"
+
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -20,7 +20,7 @@
     components: { Bar },
     data() {
       return {
-        loaded:false,
+       
         chartData: {
           labels: [],
           datasets: [ { data: [] } ]
@@ -36,7 +36,7 @@
   
 mounted() {
     this.getCD();
-    this.loaded =false
+ 
   },
   methods: {
  
@@ -63,7 +63,7 @@ mounted() {
     })
     console.log(x)
 this.chartData.datasets[0].data.push(dates.length)
-         this.loaded= true
+         
       }
         
       
