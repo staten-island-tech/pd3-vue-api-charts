@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from "vue-router";
             <img
               class="image"
               src="https://3.files.edl.io/aeb1/20/12/02/154937-46cc468f-b7f4-4bb3-945e-3265bdb605d4.jpg"
+              alt="home"
             />
           </div>
         </router-link>
