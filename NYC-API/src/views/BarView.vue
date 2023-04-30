@@ -1,28 +1,11 @@
-
-
 <script>
-import BarChart from '../components/Charts/ChartTemplate.vue'
-
-
-export default {
-  name: 'App',
-  components: { BarChart }
-}
+import BarChart from "../components/Charts/BarChart.vue";
 </script>
+
 <template>
-  <main>
-    <div class="Bar">
-    <BarChart>Birthyear</BarChart>
-    </div>
-  </main>
+  <div class="bar">
+    <RouterLink to="/pie"></RouterLink>
+    <BarChart v-if="retrievedData" :chartData="dogs" />
+    <h1>hi</h1>
+  </div>
 </template>
-
-<style scoped>
-.Bar{
-  width: 100%;
-  background-color:darkgray;
-  
-  
-}
-</style>
-
