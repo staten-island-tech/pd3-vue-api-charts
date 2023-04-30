@@ -12,7 +12,7 @@ export default {
 <template>
   <main>
     <div class="Bar">
-    <BarChart></BarChart>
+    <BarChart>Birthyear</BarChart>
     </div>
   </main>
 </template>
@@ -20,7 +20,9 @@ export default {
 <style scoped>
 .Bar{
   width: 100%;
-  background-color:black
+  background-color:black;
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 </style>
 

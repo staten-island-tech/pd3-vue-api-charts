@@ -1,7 +1,7 @@
 <template>
     <Bar
       v-if="retrievedData"
-      div class="bar"
+     id="bar"
       :options="chartOptions"
       :data="chartData"
     />
@@ -26,7 +26,7 @@
       },
       chartOptions: {
         responsive: true,
-        backgroundColor: ["#000fff"],
+        backgroundColor: ["#ff0000","#FFA500", "#FFFF00","#00FF00", "#0000FF","#4B0082", "#8F00FF"],
       },
       retrievedData: false,
     };
@@ -70,8 +70,3 @@
 };
 </script>
 
-<style scoped>
-.bar{
-  width: 100%;
-}
-</style>
