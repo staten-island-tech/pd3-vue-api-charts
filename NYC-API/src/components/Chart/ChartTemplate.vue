@@ -20,8 +20,8 @@
     data() {
       return {
         chartData: {
-          labels: [],
-          datasets: [ { data: [] } ]
+          labels: [2016,2020,2002],
+          datasets: [ { data: [2016,2016,2016] } ]
         },
         chartOptions: {
           responsive: true
@@ -36,6 +36,7 @@ mounted() {
     this.getCD();
   },
   methods: {
+ 
    getCD: async function  () {
       
  let dates = [];
@@ -58,19 +59,24 @@ mounted() {
       label.push(birth)
     })
     console.log(x)
-          this.chartData.datasets[0].data.push(dates.length)
+  
          
       }
-      
+        
       
       catch (error) {
         console.log(error);
       }
             this.retrievedData = true;
-  }
-  }
-  }
+  },
   
+  pushData:function(){
+this.chartData.datasets[0].dates.push(data.length)
+this.chartData.labels[0].label.push(labels.length)
+console.log(this.pushData)
+  }
+  }
+  }
     
   
   
