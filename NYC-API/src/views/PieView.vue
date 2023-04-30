@@ -158,7 +158,7 @@ export default {
         <div class="license-data" v-if="license">
           <ul>
             <li>In the month of september 2014, 233 licenses were issued.</li>
-            <li>In the month of october 2014,369 licenses were issued.</li>
+            <li>In the month of october 2014, 369 licenses were issued.</li>
             <li>In the month of november 2014, 262 licenses were issued.</li>
             <li>In the month of december 2014, 136 licenses were issued.</li>
           </ul>
