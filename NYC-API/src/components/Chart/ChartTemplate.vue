@@ -1,5 +1,6 @@
 <template>
     <Bar
+     v-if="loaded"
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -19,9 +20,10 @@
     components: { Bar },
     data() {
       return {
+        loaded:false,
         chartData: {
-          labels: [2016,2020,2002],
-          datasets: [ { data: [2016,2016,2016] } ]
+          labels: [],
+          datasets: [ { data: [] } ]
         },
         chartOptions: {
           responsive: true
@@ -34,6 +36,7 @@
   
 mounted() {
     this.getCD();
+    this.loaded =false
   },
   methods: {
  
@@ -59,8 +62,8 @@ mounted() {
       label.push(birth)
     })
     console.log(x)
-  
-         
+this.chartData.datasets[0].data.push(dates.length)
+         this.loaded= true
       }
         
       
@@ -70,14 +73,10 @@ mounted() {
             this.retrievedData = true;
   },
   
-  pushData:function(){
-this.chartData.datasets[0].dates.push(data.length)
-this.chartData.labels[0].label.push(labels.length)
-console.log(this.pushData)
+
   }
   }
-  }
-    
+  
   
   
   </script>
