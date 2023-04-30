@@ -1,17 +1,21 @@
 <template>
-     <Bar :data="chartData" :options="chartOptions" v-if="retrievedData" />
+    <Bar
+      id="my-chart-id"
+      :options="chartOptions"
+      :data="chartData"
+    />
   </template>
   
   <script>
   import { Bar } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-
+import { onMounted} from 'vue'
   
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   
 
   export default {
-    name: "Barchart",
+    name: 'BarChart',
     components: { Bar },
     data() {
       return {
@@ -25,14 +29,14 @@
             retrievedData: false,
       }
       
-    },
+    }
     
-  
- mounted() {
+  }
+ onMounted() ;{
     this.getCD();
-  },
+  }
   methods: {
-   getCD: async function  () {
+    async function getCD () {
       this.retrievedData = false;
       try {
         let data = await fetch(
@@ -50,5 +54,5 @@
   }
     
   }
-  }
+  
   </script>
