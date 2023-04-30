@@ -1,8 +1,8 @@
 
 
 <script>
-import BarChart from '../components/Chart/ChartTemplate.vue'
-import TheWelcome from '../components/TheWelcome.vue'
+import BarChart from '../components/Charts/ChartTemplate.vue'
+
 
 export default {
   name: 'App',
