@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Bar :data="chartData" :options="chartOptions" v-if="retrievedData" />
+    <Bar :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs';
+import { Bar } from "vue-chartjs";
 import {
   Chart as ChartJS,
   Title,
@@ -36,6 +36,11 @@ export default {
     chartOptions: {
       type: Object,
       default: () => {},
+    },
+    data() {
+      return {
+        retrievedData: false,
+      };
     },
   },
 };
