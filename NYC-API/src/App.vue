@@ -6,14 +6,7 @@ import { RouterLink, RouterView } from "vue-router";
   <div class="app">
     <header>
       <nav>
-        <router-link to="/" class="hello">
-          <div class="image">
-            <img
-              class="image"
-              src="https://3.files.edl.io/aeb1/20/12/02/154937-46cc468f-b7f4-4bb3-945e-3265bdb605d4.jpg"
-            />
-          </div>
-        </router-link>
+        <RouterLink to="/">Home:</RouterLink>
         <RouterLink to="/about">About:</RouterLink>
         <RouterLink to="/bar">Bar Chart:</RouterLink>
         <RouterLink to="/pie">Pie Chart:</RouterLink>
