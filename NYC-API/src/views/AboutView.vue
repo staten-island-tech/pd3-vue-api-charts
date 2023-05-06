@@ -34,7 +34,11 @@
 }
 p {
   font-size: 20px;
-  width: 50vw;
+  width: 55vw;
   margin: auto;
+}
+
+h1 {
+  margin: 40px;
 }
 </style>
