@@ -2,18 +2,25 @@
 
 <template>
   <div class="about">
-    <h1 data-aos="zoom-in-down" data-aos-duration="3000">About the devs:</h1>
+    <h1
+      class="descriptionTitle"
+      data-aos="zoom-in-down"
+      data-aos-duration="3000"
+    >
+      About the devs:
+    </h1>
     <p data-aos="zoom-in-up" data-aos-duration="3000">
-      This Vue chart project was made by those two idiots, Leo and Dominic. As
-      Whalen likes to call them, they are the two old white muppets from The
-      Muppets. In this project, you will find only 2 different charts and 3
-      datasets because that was all we needed to do. Our budget was running low
-      so that will be all you get from us. ¯\_(ツ)_/¯
+      This Vue chart project was made by Leo Dwi and Dominic Lin. Inside, you
+      will find a bar chart containing the amount of dogs born in a specific
+      year from a dataset consisting of the years 2000 to 2014. You will also
+      find a pie chart that sorts dogs by gender with a sample size of 1000, as
+      well as the licenses that were issued from september 2014 to december
+      2014.
     </p>
   </div>
 </template>
 
-<style>
+<style scoped>
 .about {
   text-align: center;
   display: flex;
@@ -21,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
 }
-h1 {
+.descriptionTitle {
   margin: 50px, 0px;
   font-size: 40px;
 }
